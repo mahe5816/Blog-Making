@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="styles.css">
+     <script>
+        // Show an alert if the URL contains an error message
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('error')) {
+                alert(urlParams.get('error')); // Show alert with error message
+            }
+        };
+    </script> 
+</head>
+<body>
+ <form method="post" action="/reg">
+ 
+    <div class="login-container">
+        <h2>Sign Up</h2>
+       
+            <div class="input-group">
+                <label for="name">Full Name</label>
+                <input type="text" name="fname" id="name" placeholder="Enter your name" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" name="pass1" id="password" placeholder="Create a password" required>
+            </div>
+            <div class="input-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" name="pass2" id="confirm-password" placeholder="Confirm your password" required>
+            </div>
+            <button type="submit">Sign Up</button>
+            <p class="signup-link">Already have an account? <a href="index.html">Login</a></p>
+       
+  	  </div>
+    </form>
+</body>
+</html>

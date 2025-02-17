@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .container {
+            background: white;
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            font-size: 20px;
+        }
+
+        form {
+            margin: 10px 0;
+        }
+
+        input[type="number"] {
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 80%;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        label {
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>UserId: <span th:text="${session.uu.getId()}"></span></h1>
+        <h1>UserName: <span th:text="${session.uu.getFname()}"></span></h1>
+        <h1>Email: <span th:text="${session.uu.getEmail()}"></span></h1>
+
+        <form action="/logout" method="post">
+            <button type="submit">Sign Out</button>
+        </form>
+
+        <form action="/blog" method="post">
+            <button type="submit">Make a Blog</button>
+        </form>
+
+        <form action="/fetch" method="post">
+            <button type="submit">Fetch All Blogs</button>
+        </form>
+
+        <form action="/fetcgbyid" method="post">
+            <label for="id">Enter User ID:</label>
+            <input type="number" name="id" id="id">
+            <button type="submit">Fetch</button>
+        </form>
+    </div>
+
+</body>
+</html>
